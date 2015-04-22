@@ -1,53 +1,47 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
+//Importando react native
 var React = require('react-native');
+
+//Extraindo os componentes necessários da biblioteca
 var {
   AppRegistry,
   StyleSheet,
   Text,
   View,
+  Component
 } = React;
 
-var ReactHotelFinderTut = React.createClass({
-  render: function() {
+//Criando o componente principal, container para todo App
+class ReactHotelFinderTut extends Component {
+  render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+Control+Z for dev menu
+        <Text style={styles.helloWorld}>
+          Hello World
         </Text>
       </View>
     );
   }
-});
+}
 
+//Criando estilos dos components, isso te lembra algo?
 var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
-  welcome: {
-    fontSize: 20,
+  helloWorld: {
+    fontSize: 32,
     textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    fontWeight: 'bold'
+  }
 });
 
-AppRegistry.registerComponent('ReactHotelFinderTut', () => ReactHotelFinderTut);
+//Registrando componente principal, sem isso o app não funciona
+AppRegistry.registerComponent(
+  'ReactHotelFinderTut', 
+  () => ReactHotelFinderTut
+);
